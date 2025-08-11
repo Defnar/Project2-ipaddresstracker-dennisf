@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { IpDataContext } from "./contexts";
 import type { IpData } from "../utils/types";
 
@@ -19,18 +19,20 @@ export default function AppProviders({ children }: AppProviders) {
     },
     isp: "",
     location: {
-        country: "",
-        city: "",
-        region: "",
-        lat: 0,
-        lng: 0,
-        postalCode: 0,
-        timezone: "",
-        geonameId: 0,
+      country: "",
+      city: "",
+      region: "",
+      lat: 0,
+      lng: 0,
+      postalCode: 0,
+      timezone: "",
+      geonameId: 0,
     },
   });
 
-  const createData = (newIpData: IpData) => setIpData(newIpData);
+  const createData = useCallback((newIpData: IpData | null) => {
+    if (newIpData) setIpData(newIpData);
+  }, []);
 
   return (
     <IpDataContext.Provider value={{ ...ipData, createData }}>

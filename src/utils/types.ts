@@ -32,7 +32,7 @@ export interface IpData {
 }
 
 export interface IpDataType extends IpData {
-  createData: (newIpData: IpData) => void;
+  createData: (newIpData: IpData | null) => void;
 }
 
 

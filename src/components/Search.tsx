@@ -21,13 +21,14 @@ export default function Search({ submitSearch }: SearchProps) {
       (e.type === "keydown" && (e as React.KeyboardEvent).key === "Enter") ||
       e.type === "click"
     ) {
-      console.log("button pressed");
+      if (searchInput === "" || !searchInput) return;
       const domainRegex = /^(?:www\.)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
       if (!isIP(searchInput.trim()) && !domainRegex.test(searchInput.trim())) {
         alert("Ensure the search is a valid ip/domain");
         return;
       }
       submitSearch(searchInput.trim());
+      setSearchInput("");
     }
   };
 
