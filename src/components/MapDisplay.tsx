@@ -3,12 +3,13 @@ import { IpDataContext } from "../contexts/contexts";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 export default function MapDisplay() {
-  const { location } = useContext(IpDataContext);
+  const { ip, location } = useContext(IpDataContext);
+
 
   return (
     <div style={{ height: "400px", width: "100%" }}>
       <MapContainer
-        center={[51.505, -0.09]}
+        center={[location.lat, location.lng]}
         zoom={13}
         scrollWheelZoom={true}
         style={{ height: "100%", width: "100%" }} 
@@ -17,9 +18,9 @@ export default function MapDisplay() {
           attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[51.505, -0.09]}>
+        <Marker position={[location.lat, location.lng]}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            {ip}<br /> {`${location.city}, ${location.region} ${location.postalCode}`}
           </Popup>
         </Marker>
       </MapContainer>
