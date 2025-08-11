@@ -41,3 +41,6 @@ dist-ssr
 
 # environment key
 .ENV
+
+#personal files
+dependencies

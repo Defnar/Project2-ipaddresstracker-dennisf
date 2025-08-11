@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { IpDataContext } from "./contexts";
 import type { IpData } from "../utils/types";
 
@@ -18,6 +18,9 @@ export default function AppProviders({ children }: AppProviders) {
       type: "",
     },
     isp: "",
+
+    loading: false,
+    error: null,
   });
 
   const createData = (newIpData: IpData) => setIpData(newIpData);

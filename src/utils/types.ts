@@ -24,9 +24,11 @@ export interface AS {
 }
 
 export interface IpData {
+  loading: boolean;
+  error: string | null;
   ip: string;
   domains: Domains;
-  as: AS;
+  as: AS | null;
   isp: string;
 }
 
