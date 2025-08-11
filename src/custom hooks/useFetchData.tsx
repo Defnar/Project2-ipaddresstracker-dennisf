@@ -32,6 +32,7 @@ export default function useFetchData<apiData>(
     //fetch data
     const fetchData = async () => {
       try {
+        console.log("fetching data")
         const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) {
           throw new Error(`HTTP Error: ${response.status}`);
@@ -57,5 +58,6 @@ export default function useFetchData<apiData>(
     };
   }, [searchParam, searchByIp]);
 
+  console.log(loading, data, error);
   return [loading, data, error];
 }
