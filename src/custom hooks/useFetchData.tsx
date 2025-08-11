@@ -18,12 +18,18 @@ export default function useFetchData<apiData>(
       searchByIp ? "ipAddress=" : "domain="
     }${searchParam}`;
 
+
+    //so we aren't sending empty requests/undefined requests
+    if (!searchParam || searchParam === "") return;
+
     //timeout and abort functions for fetch data
     const controller = new AbortController();
     const abortTimeout = setTimeout(() => {
       controller.abort();
     }, 5000);
 
+
+    //fetch data
     const fetchData = async () => {
       try {
         const response = await fetch(url, { signal: controller.signal });
