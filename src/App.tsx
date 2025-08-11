@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import './App.css'
 import Search from './components/Search'
+import InfoDisplay from './components/InfoDisplay';
 
 function App() {
   const [searchValue, setSearchValue] = useState<string>()
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
     <Search submitSearch={setSearchValue} />
+    <InfoDisplay />
     </>
   )
 }

@@ -26,6 +26,7 @@ export interface AS {
 export interface IpData {
   loading: boolean;
   error: string | null;
+  location: Location;
   ip: string;
   domains: Domains;
   as: AS | null;
@@ -35,3 +36,5 @@ export interface IpData {
 export interface IpDataType extends IpData {
   createData: (newIpData: IpData) => void;
 }
+
+
