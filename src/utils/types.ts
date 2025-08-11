@@ -24,8 +24,6 @@ export interface AS {
 }
 
 export interface IpData {
-  loading: boolean;
-  error: string | null;
   location: Location;
   ip: string;
   domains: Domains;

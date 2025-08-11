@@ -28,9 +28,6 @@ export default function AppProviders({ children }: AppProviders) {
         timezone: "",
         geonameId: 0,
     },
-
-    loading: false,
-    error: null,
   });
 
   const createData = (newIpData: IpData) => setIpData(newIpData);

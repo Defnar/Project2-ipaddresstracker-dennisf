@@ -3,8 +3,6 @@ import type { IpDataType } from "../utils/types";
 
 export const IpDataContext = createContext<IpDataType>({
   ip: "0.0.0.0",
-  loading: false,
-  error: null,
   domains: [],
   location: {
     country: "",
