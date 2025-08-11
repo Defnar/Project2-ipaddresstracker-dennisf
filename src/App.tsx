@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Search submitSearch={setSearchValue} />
-      <InfoDisplay />
+      <InfoDisplay loading={loading} error={error}/>
       <MapDisplay />
     </>
   );

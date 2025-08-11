@@ -1,36 +1,41 @@
 import { useContext } from "react";
 import { IpDataContext } from "../contexts/contexts";
 
-export default function InfoDisplay() {
+interface infoDisplayProps {
+  loading: boolean;
+  error: string | null;
+}
+
+export default function InfoDisplay({ loading, error }: infoDisplayProps) {
   const { ip, isp, location } = useContext(IpDataContext);
 
   const formatLocation = () => {
-    return `${location.city}, ${location.region} ${location.postalCode}`;
+    if (!location) return ""
+    return `${location.city || ""}, ${location.region || ""} ${location.postalCode || ""}`;
   };
+
+  const formatData = (title: string, dataInput: string) => (
+    <div>
+      <h3>{title}</h3>
+      {!loading && !error && (
+        <p>
+          {title === "TIMEZONE" ? "UTC" : ""}
+          {dataInput || ""}
+        </p>
+      )}
+      {loading && <p>data loading...</p>}
+    </div>
+  );
 
   return (
     <div>
       <div>
-        <h3>IP ADDRESS</h3>
-        <p>{ip}</p>
+        {formatData("IP ADDRESS", ip)}
+        {formatData("LOCATION", formatLocation())}
+        {formatData("TIMEZONE", location.timezone)}
+        {formatData("ISP", isp)}
       </div>
-      <div>
-        <h3>LOCATION</h3>
-        <p>{formatLocation()}</p>
-      </div>
-      <div>
-        <h3>TIMEZONE</h3>
-        <p>UTC{location.timezone}</p>
-      </div>
-      <div>
-        <h3>ISP</h3>
-        <p>{isp}</p>
-      </div>
+      <span>{error}</span>
     </div>
   );
-
-  //ip address
-  //location city-state-zip
-  //isp
-  //time zone?
 }
