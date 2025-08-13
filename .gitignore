@@ -40,8 +40,9 @@ dist-ssr
 .DS_Store
 
 # environment key
-.ENV
+.env
 
 #personal files
 dependencies
 data-tracking
+design

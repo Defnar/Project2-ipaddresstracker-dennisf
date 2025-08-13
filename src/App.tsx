@@ -7,6 +7,7 @@ import useFetchData from "./custom hooks/useFetchData";
 import { isIP } from "is-ip";
 import type { IpData } from "./utils/types";
 import { IpDataContext } from "./contexts/contexts";
+import Header from "./components/Header";
 
 function App() {
   const [searchValue, setSearchValue] = useState<string>();
@@ -25,11 +26,13 @@ function App() {
   }, [createData, data]);
 
   return (
-    <>
-      <Search submitSearch={setSearchValue} />
-      <InfoDisplay loading={loading} error={error}/>
+    <div className="text-[18px] font-rubik">
+      <Header>
+        <Search submitSearch={setSearchValue} />
+        <InfoDisplay loading={loading} error={error} />
+      </Header>
       <MapDisplay />
-    </>
+    </div>
   );
 }
 

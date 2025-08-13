@@ -38,12 +38,12 @@ export default function Search({ submitSearch }: SearchProps) {
         type="text"
         value={searchInput}
         placeholder="search by ip or domain"
-        aria-label="search for ip or domain"
+        aria-label="search by ip or domain"
         onChange={handleInput}
         onKeyDown={submitData}
       />
-      <button type="button" aria-label="submit userInput" onClick={submitData}>
-        change to arrow later
+      <button type="button" aria-label="submit search" onClick={submitData}>
+        <img src="../images/icon-arrow.svg" alt="submit button"/>
       </button>
     </div>
   );
