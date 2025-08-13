@@ -45,4 +45,4 @@ dist-ssr
 #personal files
 dependencies
 data-tracking
-design
+design/*

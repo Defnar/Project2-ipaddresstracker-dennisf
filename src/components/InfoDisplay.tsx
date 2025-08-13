@@ -28,8 +28,8 @@ export default function InfoDisplay({ loading, error }: infoDisplayProps) {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center absolute mx-10 z-50 bg-white min-w-[300px] w-[300px] md:w-4/5 max-w-[1000px] md:h-[175px]  rounded-2xl translate-y-1/2 bottom-0">
-      <div className="flex flex-col md:flex-row w-[300px] md:w-full md:h-full md:min-h-[125px] md:justify-evenly md:divide-x-1 md:divide-dark-gray gap-4 px-10 py-5 md:pt-10">
+    <div className="shadow-md flex flex-col justify-center items-center absolute mx-10 z-50 bg-white min-w-[300px] w-[300px] md:w-4/5 max-w-[1250px] md:h-[175px]  lg:h-[150px] rounded-2xl translate-y-1/2 bottom-0">
+      <div className="flex flex-col md:flex-row w-[300px] md:w-full md:h-full md:justify-evenly md:divide-x-1 md:divide-dark-gray gap-4 px-10 py-5 md:pt-10">
         {formatData("IP ADDRESS", ip)}
         {formatData("LOCATION", formatLocation())}
         {formatData("TIMEZONE", location.timezone)}

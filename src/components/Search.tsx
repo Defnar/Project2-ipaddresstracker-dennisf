@@ -35,7 +35,7 @@ export default function Search({ submitSearch }: SearchProps) {
   return (
     <div className="flex flex-row  mx-10 px-10 w-full justify-center items-center h-10">
       <input
-      className="bg-white  h-full grow max-w-[400px] rounded-l-md w-80 px-3 py-1 shrink"
+      className="bg-white h-full grow max-w-[400px] rounded-l-md w-80 px-3 py-1 shrink"
         type="text"
         value={searchInput}
         placeholder="search by ip or domain"
@@ -44,7 +44,7 @@ export default function Search({ submitSearch }: SearchProps) {
         onKeyDown={submitData}
       />
       <button type="button" 
-      className="bg-black px-3 h-full shrink-0 rounded-r-lg"
+      className="bg-black px-4 h-full shrink-0 rounded-r-lg hover:cursor-pointer"
       aria-label="submit search" onClick={submitData}>
         <img src="../images/icon-arrow.svg" alt="submit button"/>
       </button>
