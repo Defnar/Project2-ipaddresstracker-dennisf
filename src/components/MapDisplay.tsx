@@ -3,12 +3,14 @@ import { IpDataContext } from "../contexts/contexts";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import MapAutomation from "./MapAutomation";
 import { Icon } from "leaflet";
+import iconLocation from "/src/assets/icon-location.svg";
+
 
 export default function MapDisplay() {
   const { ip, location } = useContext(IpDataContext);
 
   const markerIcon = new Icon({
-    iconUrl: "/src/assets/icon-location.svg",
+    iconUrl: iconLocation,
     iconSize: [46, 56],
     iconAnchor: [23, 56],
     popupAnchor: [0, -56]
