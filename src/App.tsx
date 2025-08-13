@@ -25,6 +25,7 @@ function App() {
     createData(data);
   }, [createData, data]);
 
+
   return (
     <div className="text-[18px] font-rubik flex flex-col h-screen">
       <Header>
