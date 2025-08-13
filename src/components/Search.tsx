@@ -22,7 +22,7 @@ export default function Search({ submitSearch }: SearchProps) {
       e.type === "click"
     ) {
       if (searchInput === "" || !searchInput) return;
-      const domainRegex = /^(?:www\.)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
+      const domainRegex = /^(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+)\/?$/;
       if (!isIP(searchInput.trim()) && !domainRegex.test(searchInput.trim())) {
         alert("Ensure the search is a valid ip/domain");
         return;
