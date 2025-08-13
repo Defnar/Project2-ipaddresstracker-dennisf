@@ -7,7 +7,7 @@ export default function MapAutomation() {
   const map = useMap();
 
   useEffect(() => {
-    map.flyTo([location.lat, location.lng], map.getZoom());
+    map.flyTo([location.lat, location.lng + 2], map.getZoom());
   }, [location, map]);
 
   return null;
