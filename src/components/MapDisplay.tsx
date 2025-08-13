@@ -7,12 +7,14 @@ export default function MapDisplay() {
   const { ip, location } = useContext(IpDataContext);
 
   return (
-    <div style={{ height: "400px", width: "100%" }}>
+    <div className="z-10" style={{ height: "400px", width: "100%" }}>
       <MapContainer
         center={[location.lat, location.lng]}
         zoom={13}
         scrollWheelZoom={true}
         style={{ height: "100%", width: "100%" }}
+        className="z-10"
+        zoomControl={false}
       >
         <MapAutomation />
         <TileLayer

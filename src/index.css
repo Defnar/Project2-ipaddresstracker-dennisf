@@ -4,4 +4,6 @@
 
 @theme {
   --font-rubik: "Rubik", sans-serif;
+  --color-very-dark-gray: hsl(0, 0%, 17%);
+  --color-dark-gray: hsl(0, 0%, 59%);
 }

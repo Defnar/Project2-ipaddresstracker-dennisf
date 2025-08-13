@@ -33,7 +33,7 @@ export default function Search({ submitSearch }: SearchProps) {
   };
 
   return (
-    <div className="flex flex-row border mx-10 px-10 border-black w-full justify-center items-center h-10">
+    <div className="flex flex-row  mx-10 px-10 w-full justify-center items-center h-10">
       <input
       className="bg-white  h-full grow max-w-[400px] rounded-l-md w-80 px-3 py-1 shrink"
         type="text"

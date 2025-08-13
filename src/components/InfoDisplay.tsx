@@ -15,10 +15,10 @@ export default function InfoDisplay({ loading, error }: infoDisplayProps) {
   };
 
   const formatData = (title: string, dataInput: string) => (
-    <div>
-      <h3>{title}</h3>
+    <div className="flex flex-col justify-center items-center">
+      <h3 className="text-dark-gray text-[10px]">{title}</h3>
       {!loading && !error && (
-        <p>
+        <p className="font-bold text-very-dark-gray">
           {title === "TIMEZONE" ? "UTC" : ""}
           {dataInput || ""}
         </p>
@@ -28,8 +28,8 @@ export default function InfoDisplay({ loading, error }: infoDisplayProps) {
   );
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-col justify-center items-center absolute z-50 bg-white min-w-[300px] h-[300px] rounded-lg translate-y-1/2 bottom-0">
+      <div className="flex flex-col gap-4 px-10 py-5">
         {formatData("IP ADDRESS", ip)}
         {formatData("LOCATION", formatLocation())}
         {formatData("TIMEZONE", location.timezone)}
