@@ -11,7 +11,7 @@ export default function InfoDisplay({ loading, error }: infoDisplayProps) {
   const { ip, isp, location } = useContext(IpDataContext);
 
   const formatLocation = () => {
-    if (!location) return "";
+    if (!location || !location.city) return "";
     return `${location.city || ""}, ${location.region || ""} ${
       location.postalCode || ""
     }`;
