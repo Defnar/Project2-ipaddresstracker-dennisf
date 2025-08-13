@@ -17,7 +17,7 @@ export default function MapDisplay() {
   });
 
   return (
-    <div className="z-10 w-full grow">
+    <main className="z-10 w-full grow">
       <MapContainer
         center={[location.lat, location.lng]}
         zoom={13}
@@ -39,6 +39,6 @@ export default function MapDisplay() {
           </Popup>
         </Marker>
       </MapContainer>
-    </div>
+    </main>
   );
 }
