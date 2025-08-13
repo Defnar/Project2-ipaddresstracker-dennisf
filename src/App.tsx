@@ -26,7 +26,7 @@ function App() {
   }, [createData, data]);
 
   return (
-    <div className="text-[18px] font-rubik">
+    <div className="text-[18px] font-rubik flex flex-col h-screen">
       <Header>
         <Search submitSearch={setSearchValue} />
         <InfoDisplay loading={loading} error={error} />

@@ -7,7 +7,7 @@ export default function MapDisplay() {
   const { ip, location } = useContext(IpDataContext);
 
   return (
-    <div className="z-10" style={{ height: "400px", width: "100%" }}>
+    <div className="z-10 w-full grow">
       <MapContainer
         center={[location.lat, location.lng]}
         zoom={13}
