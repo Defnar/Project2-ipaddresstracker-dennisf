@@ -46,7 +46,7 @@ export default function Search({ submitSearch }: SearchProps) {
       <button type="button" 
       className="bg-black px-4 h-full shrink-0 rounded-r-lg hover:cursor-pointer"
       aria-label="submit search" onClick={submitData}>
-        <img src="/images/icon-arrow.svg" alt="submit button"/>
+        <img src="/src/assets/icon-arrow.svg" alt="submit button"/>
       </button>
     </div>
   );
