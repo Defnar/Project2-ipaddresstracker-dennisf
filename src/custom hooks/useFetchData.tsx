@@ -18,9 +18,12 @@ export default function useFetchData<apiData>(
       searchByIp ? "ipAddress=" : "domain="
     }${searchParam}`;
 
-
     //so we aren't sending empty requests/undefined requests
     if (!searchParam || searchParam === "") return;
+
+    //reseting data
+    setLoading(true);
+    setError(null);
 
     //timeout and abort functions for fetch data
     const controller = new AbortController();
@@ -28,13 +31,12 @@ export default function useFetchData<apiData>(
       controller.abort();
     }, 5000);
 
-
     //fetch data
     const fetchData = async () => {
       try {
-        console.log("fetching data")
         const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) {
+          if (response.status === 400) throw new Error ("domain or IP does not exist")
           throw new Error(`HTTP Error: ${response.status}`);
         }
         const responseData = await response.json();
@@ -42,7 +44,8 @@ export default function useFetchData<apiData>(
       } catch (error) {
         if (!isActive) return;
         if (error instanceof DOMException && error.name === "AbortError")
-          setError((error as Error).message);
+          setError("user aborted or fetching data timed out");
+        setError((error as Error).message);
       } finally {
         clearTimeout(abortTimeout);
         if (isActive) setLoading(false);
@@ -58,6 +61,5 @@ export default function useFetchData<apiData>(
     };
   }, [searchParam, searchByIp]);
 
-  console.log(loading, data, error);
   return [loading, data, error];
 }

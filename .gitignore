@@ -36,13 +36,11 @@ dist-ssr
 *.xd
 *.fig
 
-# Avoid your project being littered with annoying .DS_Store files!
-.DS_Store
-
 # environment key
 .env
 
 #personal files
 dependencies
 data-tracking
-design/*
+design
+style-guide.md

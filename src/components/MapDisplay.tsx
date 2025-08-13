@@ -24,7 +24,7 @@ export default function MapDisplay() {
         <Marker position={[location.lat, location.lng]}>
           <Popup>
             {ip}
-            <br />{" "}
+            <br />
             {`${location.city}, ${location.region} ${location.postalCode}`}
           </Popup>
         </Marker>

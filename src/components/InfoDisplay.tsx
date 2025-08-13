@@ -35,7 +35,7 @@ export default function InfoDisplay({ loading, error }: infoDisplayProps) {
         {formatData("TIMEZONE", location.timezone)}
         {formatData("ISP", isp)}
       </div>
-      {error && <span>{error}</span>}
+      {error && <span className="text-[24px] text-red-600">{error}</span>}
     </div>
   );
 }
