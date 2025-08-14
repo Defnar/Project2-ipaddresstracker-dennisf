@@ -28,7 +28,8 @@ export default function Search({ submitSearch }: SearchProps) {
         alert("Ensure the search is a valid ip/domain");
         return;
       }
-      submitSearch(searchInput.trim());
+      const domain = searchInput.trim().replace(/^https?:\/\//, "").replace(/\/$/, "");
+      submitSearch(domain);
       setSearchInput("");
     }
   };
